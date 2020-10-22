@@ -2,6 +2,7 @@ node('DOTNETCORE') {
   stage('SCM'){
       echo "getting build items"
       git branch :'${branch}', url: 'https://github.com/srkprof/pipeline.git'
+      releasenotes()
   }
   stage ('Build'){
       echo "Building"
