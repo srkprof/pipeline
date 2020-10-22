@@ -1,0 +1,11 @@
+node {
+  stage('SCM'){
+      echo "getting build items"
+      git branch :'${branch}', url: 'https://github.com/srkprof/pipeline.git'
+  }
+  stage ('Build'){
+      echo "Building"
+      sh 'dotnet --version'
+      sh 'dotnet build Ilovegroovy'
+  }
+}
